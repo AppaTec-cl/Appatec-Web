@@ -2,7 +2,7 @@
   "name": "appatec-web",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://<Appatech-cl>.github.io/<Appatec-Web>",
+  "homepage": "https://AppaTech-cl.github.io/Appatec-Web",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
