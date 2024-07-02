@@ -1,64 +1,42 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 1rem;
-    text-align: center;
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
+.card {
+  padding: 2em;
 }
 
-.section {
-    padding: 20px;
-    text-align: center;
-}
-
-.bg-primary {
-    background-color: #0066cc;
-    color: white;
-}
-
-.bg-secondary {
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-.btn {
-    background-color: #0066cc;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.btn:hover {
-    background-color: #005bb5;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    padding: 1rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+.read-the-docs {
+  color: #888;
 }
