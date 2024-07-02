@@ -1,5 +1,5 @@
 import React from 'react';
-import './DownloadPage.css'; // Asegúrate de crear este archivo CSS
+import './DownloadPage.css';
 
 function DownloadPage() {
   return (

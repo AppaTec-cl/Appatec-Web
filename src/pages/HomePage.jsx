@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './HomePage.css'; // Asegúrate de crear este archivo CSS
+import './HomePage.css';
 
 function HomePage() {
   return (
@@ -8,20 +8,24 @@ function HomePage() {
       <section className="hero-section">
         <h1>Bienvenido a AppaTec</h1>
         <p>Tu solución para gestionar contratos de manera eficiente y segura.</p>
-        <Link to="/download" className="download-btn">Descarga ACG</Link>
+        <Link to="/download" className="button">Descarga ACG</Link>
       </section>
       <section className="features-section">
         <h2>Características</h2>
         <div className="features-container">
           <div className="feature">
             <img src="/path/to/feature1-icon.png" alt="Feature 1"/>
-            <h3>Facilidad de Uso</h3>
-            <p>Gestiona tus contratos con una interfaz amigable.</p>
+            <div>
+              <h3>Facilidad de Uso</h3>
+              <p>Gestiona tus contratos con una interfaz amigable.</p>
+            </div>
           </div>
           <div className="feature">
             <img src="/path/to/feature2-icon.png" alt="Feature 2"/>
-            <h3>Seguridad</h3>
-            <p>Tus contratos están seguros con encriptación avanzada.</p>
+            <div>
+              <h3>Seguridad</h3>
+              <p>Tus contratos están seguros con encriptación avanzada.</p>
+            </div>
           </div>
           {/* Más características */}
         </div>
