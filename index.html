@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppaTec</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navbar al estilo de Steam -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <!-- Logo y nombre opcional -->
+            <a class="navbar-brand" href="#">AppaTec</a>
+            <!-- Enlaces de la Navbar -->
+            <a href="#home">Inicio</a>
+            <a href="#about">Sobre Nosotros</a>
+            <a href="#features">Características</a>
+            <a href="#download">Descarga</a>
+        </div>
+        <div class="navbar-right">
+            <!-- Botón de cambio de modo oscuro/claro -->
+            <button class="toggle-dark-mode" aria-label="Toggle dark mode">
+                <span class="icon-light-mode" style="display:none;">🌞</span>
+                <span class="icon-dark-mode">🌜</span>
+            </button>
+            <a href="#contact">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <div class="container">
+        <section id="home">
+            <h1>Bienvenidos a AppaTec</h1>
+            <p>Descubre nuestra aplicación ACG para la generación de contratos.</p>
+            <button class="btn btn-primary">DESCARGAR ACG</button>
+        </section>
+
+        <section id="about">
+            <h2>Sobre Nosotros</h2>
+            <p>AppaTec es una empresa líder en soluciones tecnológicas innovadoras.</p>
+        </section>
+
+        <section id="features">
+            <h2>Características de ACG</h2>
+            <ul>
+                <li>Generación rápida de contratos</li>
+                <li>Interfaz amigable y fácil de usar</li>
+                <li>Seguridad garantizada en tus documentos</li>
+            </ul>
+        </section>
+
+        <section id="download">
+            <h2>Descarga ACG</h2>
+            <button class="btn btn-success">DESCARGAR AHORA</button>
+        </section>
+
+        <section id="contact">
+            <h2>Contacto</h2>
+            <form>
+                <input type="text" placeholder="Tu nombre" required>
+                <input type="email" placeholder="Tu email" required>
+                <textarea placeholder="Tu mensaje" required></textarea>
+                <button type="submit" class="btn btn-info">ENVIAR</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 AppaTec. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts para funcionalidad adicional, si necesarios -->
+    <script src="js/script.js"></script>
+</body>
+</html>

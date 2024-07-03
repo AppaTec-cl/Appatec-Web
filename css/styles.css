@@ -1,0 +1,159 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Color de fondo claro por defecto */
+    color: #333; /* Color de texto oscuro por defecto */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estilo general de la Navbar */
+.navbar {
+    background-color: #171a21; /* Fondo oscuro al estilo de Steam */
+    color: #fff;
+    font-family: Arial, sans-serif;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-left, .navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a, .toggle-dark-mode {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.navbar a:hover, .navbar a:focus {
+    color: #66c0f4; /* Color azul claro al estilo de Steam para hover */
+}
+
+/* Botón de cambio de modo claro/oscuro */
+.toggle-dark-mode {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contenedor principal y estilos de sección */
+.container {
+    padding: 20px;
+    margin-top: 60px; /* Ajuste para no solapar la navbar */
+    width: 90%;
+    max-width: 960px;
+    margin: 80px auto 20px; /* Espacio superior para la navbar */
+    background-color: #fff; /* Fondo claro */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves para cambios de modo */
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Modo oscuro específico */
+.dark-mode {
+    background-color: #333; /* Fondo oscuro para todo el cuerpo */
+    color: #ccc; /* Texto claro para modo oscuro */
+}
+
+.dark-mode .navbar {
+    background-color: #1b2838; /* Fondo más oscuro para la navbar */
+}
+
+.dark-mode .navbar a {
+    color: #ddd; /* Texto claro para enlaces en modo oscuro */
+}
+
+.dark-mode .container {
+    background-color: #282828; /* Fondo oscuro para los contenedores */
+    color: #ddd; /* Texto claro para modo oscuro */
+}
+
+footer {
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #171a21; /* Fondo oscuro al estilo de Steam */
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media queries para responsividad en dispositivos móviles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .navbar a, .toggle-dark-mode {
+        padding: 5px 0; /* Ajustar padding para enlaces en dispositivos móviles */
+    }
+
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+}
+
+/* Estilos basados en la preferencia de color del sistema */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #333; /* Fondo oscuro si el sistema prefiere modo oscuro */
+        color: #ccc; /* Texto claro para modo oscuro */
+    }
+
+    .navbar {
+        background-color: #1b2838;
+        color: #ccc;
+    }
+
+    .navbar a {
+        color: #ddd;
+    }
+
+    .container {
+        background-color: #282828;
+        color: #ddd;
+    }
+
+    footer {
+        background-color: #171a21;
+        color: #fff;
+    }
+}
