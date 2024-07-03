@@ -1,158 +1,117 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4; /* Color de fondo claro por defecto */
-    color: #333; /* Color de texto oscuro por defecto */
-    transition: background-color 0.3s, color 0.3s;
-}
-
-/* Estilo general de la Navbar */
-.navbar {
-    background-color: #171a21; /* Fondo oscuro al estilo de Steam */
-    color: #fff;
     font-family: Arial, sans-serif;
-    height: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: background-image 0.5s, color 0.5s;
+}
+
+.navbar {
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.hero-section {
+    height: 100vh;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
-.navbar-left, .navbar-right {
-    display: flex;
-    align-items: center;
-}
-
-.navbar a, .toggle-dark-mode {
-    color: #ffffff;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 16px;
-    transition: color 0.3s;
-}
-
-.navbar a:hover, .navbar a:focus {
-    color: #66c0f4; /* Color azul claro al estilo de Steam para hover */
-}
-
-/* Botón de cambio de modo claro/oscuro */
-.toggle-dark-mode {
-    background: transparent;
-    border: none;
-    color: #fff;
-    font-size: 24px;
-    cursor: pointer;
-    outline: none;
-    display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Contenedor principal y estilos de sección */
 .container {
+    max-width: 1200px;
+    margin: auto;
     padding: 20px;
-    margin: 80px auto 20px; /* Espacio superior para la navbar */
-    width: 90%;
-    max-width: 960px;
-    background-color: #fff; /* Fondo claro */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves para cambios de modo */
-}
-
-button {
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-/* Modo oscuro específico */
-.dark-mode {
-    background-color: #333; /* Fondo oscuro para todo el cuerpo */
-    color: #ccc; /* Texto claro para modo oscuro */
-}
-
-.dark-mode .navbar {
-    background-color: #1b2838; /* Fondo más oscuro para la navbar */
-}
-
-.dark-mode .navbar a {
-    color: #ddd; /* Texto claro para enlaces en modo oscuro */
-}
-
-.dark-mode .container {
-    background-color: #282828; /* Fondo oscuro para los contenedores */
-    color: #ddd; /* Texto claro para modo oscuro */
 }
 
 footer {
+    padding: 10px;
     text-align: center;
-    padding: 10px 20px;
-    background-color: #171a21; /* Fondo oscuro al estilo de Steam */
-    color: #fff;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    transition: background-color 0.5s, color 0.5s;
 }
 
-/* Media queries para responsividad en dispositivos móviles */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    .navbar a, .toggle-dark-mode {
-        padding: 5px 0; /* Ajustar padding para enlaces en dispositivos móviles */
-    }
-
-    .container {
-        width: 95%;
-        padding: 15px;
-    }
+/* Estilos para los temas claro y oscuro */
+:root {
+    --background-image-light: url('../img/AppaTecFondoClaro1-1.png');
+    --background-image-dark: url('../img/AppaTecFondoOscuro1-3.png');
+    --logo-image-light: url('../img/AppaTecLogoClaro1-2.png');
+    --logo-image-dark: url('../img/AppaTecLogoOscuro1-4.png');
+    --navbar-bg-light: #f8f9fa;
+    --navbar-bg-dark: #343a40;
+    --footer-bg-light: #f8f9fa;
+    --footer-bg-dark: #343a40;
+    --text-color-light: #000;
+    --text-color-dark: #000000;
+    --button-primary-light: #007bff;
+    --button-primary-dark: #375a7f;
+    --button-success-light: #28a745;
+    --button-success-dark: #4caf50;
+    --button-info-light: #17a2b8;
+    --button-info-dark: #00c6d7;
 }
 
-/* Estilos basados en la preferencia de color del sistema */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #333; /* Fondo oscuro si el sistema prefiere modo oscuro */
-        color: #ccc; /* Texto claro para modo oscuro */
-    }
+body[data-theme="light"] {
+    background-image: var(--background-image-light);
+    color: var(--text-color-light);
+}
 
-    .navbar {
-        background-color: #1b2838;
-        color: #ccc;
-    }
+body[data-theme="dark"] {
+    background-image: var(--background-image-dark);
+    color: var(--text-color-dark);
+}
 
-    .navbar a {
-        color: #ddd;
-    }
+body[data-theme="light"] .navbar {
+    background-color: var(--navbar-bg-light);
+    color: var(--text-color-light);
+}
 
-    .container {
-        background-color: #282828;
-        color: #ddd;
-    }
+body[data-theme="dark"] .navbar {
+    background-color: var(--navbar-bg-dark);
+    color: var(--text-color-dark);
+}
 
-    footer {
-        background-color: #171a21;
-        color: #fff;
-    }
+body[data-theme="light"] footer {
+    background-color: var(--footer-bg-light);
+    color: var(--text-color-light);
+}
+
+body[data-theme="dark"] footer {
+    background-color: var(--footer-bg-dark);
+    color: var(--text-color-dark);
+}
+
+body[data-theme="light"] .btn-primary {
+    background-color: var(--button-primary-light);
+    border-color: var(--button-primary-light);
+}
+
+body[data-theme="dark"] .btn-primary {
+    background-color: var(--button-primary-dark);
+    border-color: var(--button-primary-dark);
+}
+
+body[data-theme="light"] .btn-success {
+    background-color: var(--button-success-light);
+    border-color: var(--button-success-light);
+}
+
+body[data-theme="dark"] .btn-success {
+    background-color: var(--button-success-dark);
+    border-color: var(--button-success-dark);
+}
+
+body[data-theme="light"] .btn-info {
+    background-color: var(--button-info-light);
+    border-color: var(--button-info-light);
+}
+
+body[data-theme="dark"] .btn-info {
+    background-color: var(--button-info-dark);
+    border-color: var(--button-info-dark);
+}
+
+#logo {
+    height: 40px;
+    transition: content 0.5s;
 }
