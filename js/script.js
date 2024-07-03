@@ -8,12 +8,12 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(`Applying theme: ${theme}`);
         if (theme === 'dark') {
             document.body.classList.add('dark-mode');
-            iconLight.style.display = 'inline';
-            iconDark.style.display = 'none';
+            iconLight.style.display = 'inline'; // Mostrar icono de sol para cambiar a modo claro
+            iconDark.style.display = 'none';   // Ocultar icono de luna
         } else {
             document.body.classList.remove('dark-mode');
-            iconLight.style.display = 'none';
-            iconDark.style.display = 'inline';
+            iconLight.style.display = 'none';   // Ocultar icono de sol
+            iconDark.style.display = 'inline';  // Mostrar icono de luna para cambiar a modo oscuro
         }
     };
 

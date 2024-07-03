@@ -61,10 +61,9 @@ body {
 /* Contenedor principal y estilos de sección */
 .container {
     padding: 20px;
-    margin-top: 60px; /* Ajuste para no solapar la navbar */
+    margin: 80px auto 20px; /* Espacio superior para la navbar */
     width: 90%;
     max-width: 960px;
-    margin: 80px auto 20px; /* Espacio superior para la navbar */
     background-color: #fff; /* Fondo claro */
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     border-radius: 8px;

@@ -58,9 +58,12 @@
         <section id="contact">
             <h2>Contacto</h2>
             <form>
-                <input type="text" placeholder="Tu nombre" required>
-                <input type="email" placeholder="Tu email" required>
-                <textarea placeholder="Tu mensaje" required></textarea>
+                <label for="name">Tu nombre</label>
+                <input id="name" type="text" placeholder="Tu nombre" required>
+                <label for="email">Tu email</label>
+                <input id="email" type="email" placeholder="Tu email" required>
+                <label for="message">Tu mensaje</label>
+                <textarea id="message" placeholder="Tu mensaje" required></textarea>
                 <button type="submit" class="btn btn-info">ENVIAR</button>
             </form>
         </section>
