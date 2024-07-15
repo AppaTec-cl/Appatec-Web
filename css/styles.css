@@ -1,3 +1,20 @@
+:root {
+    --background-image-light: url('../img/AppaTecFondoClaro1-1.png');
+    --background-image-dark: url('../img/AppaTecFondoOscuro1-3.png');
+    --logo-image-light: url('../img/AppaTecLogoClaro1-2.png');
+    --logo-image-dark: url('../img/AppaTecLogoOscuro1-4.png');
+    --footer-bg-light: #f8f9fa;
+    --footer-bg-dark: #343a40;
+    --text-color-light: #000;
+    --text-color-dark: #fff;
+    --button-primary-light: #007bff;
+    --button-primary-dark: #375a7f;
+    --button-success-light: #28a745;
+    --button-success-dark: #4caf50;
+    --button-info-light: #17a2b8;
+    --button-info-dark: #00c6d7;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-size: cover;
@@ -31,26 +48,6 @@ footer {
     transition: background-color 0.5s, color 0.5s;
 }
 
-/* Estilos para los temas claro y oscuro */
-:root {
-    --background-image-light: url('../img/AppaTecFondoClaro1-1.png');
-    --background-image-dark: url('../img/AppaTecFondoOscuro1-3.png');
-    --logo-image-light: url('../img/AppaTecLogoClaro1-2.png');
-    --logo-image-dark: url('../img/AppaTecLogoOscuro1-4.png');
-    --navbar-bg-light: #f8f9fa;
-    --navbar-bg-dark: #343a40;
-    --footer-bg-light: #f8f9fa;
-    --footer-bg-dark: #343a40;
-    --text-color-light: #000;
-    --text-color-dark: #000000;
-    --button-primary-light: #007bff;
-    --button-primary-dark: #375a7f;
-    --button-success-light: #28a745;
-    --button-success-dark: #4caf50;
-    --button-info-light: #17a2b8;
-    --button-info-dark: #00c6d7;
-}
-
 body[data-theme="light"] {
     background-image: var(--background-image-light);
     color: var(--text-color-light);
@@ -62,12 +59,12 @@ body[data-theme="dark"] {
 }
 
 body[data-theme="light"] .navbar {
-    background-color: var(--navbar-bg-light);
+    background-color: transparent;
     color: var(--text-color-light);
 }
 
 body[data-theme="dark"] .navbar {
-    background-color: var(--navbar-bg-dark);
+    background-color: transparent;
     color: var(--text-color-dark);
 }
 
@@ -114,4 +111,18 @@ body[data-theme="dark"] .btn-info {
 #logo {
     height: 40px;
     transition: content 0.5s;
+}
+
+/* Background fading effect */
+body.faded {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%), var(--background-image-light);
+}
+
+body[data-theme="dark"].faded {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), var(--background-image-dark);
+}
+
+/* Smooth transition for fading effect */
+body.smooth-transition {
+    transition: background-image 0.5s ease-in-out;
 }
