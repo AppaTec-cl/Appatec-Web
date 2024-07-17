@@ -44,14 +44,15 @@ body, html {
 
 /* Secciones de contenido */
 section {
-    margin: 40px auto;
+    margin: 20px 0; /* Eliminar margen auto y max-width para expandir secciones */
     padding: 20px;
-    max-width: 800px;
+    width: 100%; /* Establecer ancho al 100% */
     background-color: var(--section-bg-color);
     color: var(--text-color);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
+
 
 section h2 {
     font-size: 1.8em;
