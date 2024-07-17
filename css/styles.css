@@ -1,6 +1,6 @@
 /* Bienvenida y descripción con sombra para mejorar contraste */
 .main-header h1, .main-header p {
-    color: white; /* Mantenemos el texto blanco */
+    color: rgb(255, 255, 255); /* Mantenemos el texto blanco */
     text-shadow: 2px 2px 8px rgb(0, 198, 215); /* Sombra negra para resaltar el texto */
     margin: 0;
     padding: 0.5em 0;
@@ -96,5 +96,80 @@ body, html {
     .navbar, .navbar-nav .nav-link {
         color: black; /* Texto negro en modo claro */
         background-color: #f8f9fa;
+    }
+}
+
+/* Estilos para las secciones de contenido */
+section {
+    margin: 40px 20px;
+    padding: 20px;
+    background-color: #f8f9fa; /* Fondo claro para mejorar el contraste en modo oscuro */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra sutil para profundidad */
+    color: #333; /* Color de texto oscuro */
+}
+
+h2 {
+    font-size: 1.5em; /* Tamaño de fuente para títulos de sección */
+    color: #0056b3; /* Color azul para títulos */
+    margin-bottom: 20px; /* Espacio después del título */
+}
+
+p, .button {
+    font-size: 1em; /* Tamaño de fuente estándar para texto y botones */
+    line-height: 1.6; /* Espaciado de línea para mejor legibilidad */
+    color: #666; /* Color de texto más suave para el contenido */
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #0056b3; /* Fondo azul para botones */
+    color: white; /* Texto blanco para botones */
+    border: none;
+    border-radius: 5px; /* Bordes redondeados para botones */
+    cursor: pointer; /* Cursor en forma de mano al pasar el mouse */
+    transition: background-color 0.3s; /* Transición suave para el efecto hover */
+}
+
+.button:hover {
+    background-color: #004494; /* Color más oscuro en hover */
+}
+
+/* Ajustes específicos para modo oscuro */
+@media (prefers-color-scheme: dark) {
+    body, section {
+        background-color: #222; /* Fondo oscuro */
+        color: #ccc; /* Texto claro */
+    }
+
+    .button {
+        background-color: #007bff; /* Botones azules más claros para contraste */
+    }
+
+    .button:hover {
+        background-color: #0056b3; /* Azul más oscuro en hover */
+    }
+}
+footer {
+    width: 100%;             /* Asegura que el footer ocupe */
+    padding: 5px 0;         /* Agrega padding arriba y abajo para un poco de espacio */
+    background-color: #333;  /* Color de fondo para el footer */
+    color: #00c6d7;            /* Color del texto */
+    text-align: center;      /* Centra el texto horizontalmente */
+    display: flex;           /* Habilita flexbox para el contenedor */
+    justify-content: center; /* Alinea los elementos hijos horizontalmente en el centro */
+    align-items: center;     /* Alinea los elementos hijos verticalmente en el centro */
+    position: relative;      /* Posicionamiento relativo, cambia a 'absolute' si necesitas que esté al fondo */
+    bottom: 0;               /* Asegura que esté en la parte inferior de la página */
+    left: 0;                 /* Alinea al borde izquierdo de la página */
+    box-shadow: 0 -4px 6px rgba(0,0,0,0.1);  /* Sombra sutil para un efecto elevado */
+    font-size: 1em;          /* Tamaño de fuente apropiado para el texto del footer */
+}
+
+/* Ejemplo de cómo ajustar cuando está en modo oscuro */
+@media (prefers-color-scheme: dark) {
+    footer {
+        background-color: #222; /* Más oscuro para el modo oscuro */
+        color: #ffffff;           /* Texto más claro para el modo oscuro */
     }
 }
