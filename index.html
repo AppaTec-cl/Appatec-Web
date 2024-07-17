@@ -3,92 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AppaTec</title>
-    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>AppaTec</title>
 </head>
 <body>
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img id="logo" src="img/AppaTecLogoClaro1-2.png" alt="AppaTec Logo" height="1080">
-            AppaTec
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<header class="main-header" id="header">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#"><img src="img/AppaTecLogoClaro1-2.png" alt="Logo de AppaTec" id="logo" height="50"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#home">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">Sobre Nosotros</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#features">Características</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#download">Descarga</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contacto</a>
-                </li>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#manual-usuario">Manual de Usuario</a></li>
+                <li class="nav-item"><a class="nav-link" href="#manual-instalacion">Manual de Instalación</a></li>
+                <li class="nav-item"><a class="nav-link" href="#descarga">Descarga</a></li>
             </ul>
         </div>
-    </div>
-</nav>
-
-<!-- Sección de Bienvenida -->
-<header class="hero-section text-center" id="home">
-    <div class="container">
-        <h1>Bienvenidos a AppaTec</h1>
-        <p>Descubre nuestra aplicación ACG para la generación de contratos.</p>
-    </div>
+    </nav>
+    <h1>Bienvenidos a AppaTec</h1>
+    <p>Descubre nuestra aplicación ACG para la generación de contratos.</p>
 </header>
-
-<!-- Contenido Principal -->
-<div class="container mt-5">
-    <section id="about" class="my-5 text-center">
+<main>
+    <section id="about-us">
         <h2>Sobre Nosotros</h2>
         <p>AppaTec nació de un grupo de jóvenes con ganas de mostrar sus conocimientos en el sector de la tecnología, y en base a sus ideas y habilidades surgieron proyectos como ACG y todo lo relacionado con esta.</p>
     </section>
-
-    <section id="features" class="my-5 text-center">
-        <h2>Características de ACG</h2>
-        <ul>
-            <li>Generación rápida de contratos</li>
-            <li>Interfaz amigable y fácil de usar</li>
-            <li>Seguridad garantizada en tus datos y documentos</li>
-        </ul>
+    <section id="features">
+        <h2>Características y Descarga de ACG</h2>
+        <p>Generación rápida de contratos<br>Interfaz amigable y fácil de usar<br>Seguridad garantizada en tus datos y documentos</p>
+        <button onclick="downloadInstaller()">DESCARGAR AHORA</button>
     </section>
-
-    <section id="download" class="my-5 text-center">
-        <h2>Descarga ACG (Appa Contrat Generator)</h2>
-        <button class="btn btn-success">DESCARGAR AHORA</button>
+    <section id="manual-usuario">
+        <h2>Manual de Usuario</h2>
+        <p>Aquí podrás descargar el manual de usuario para la aplicación ACG.</p>
+        <button onclick="downloadUserManual()">Descargar Manual de Usuario</button>
     </section>
-
-    <section id="contact" class="my-5 text-center">
-        <h2>Contacto</h2>
-        <form class="contact-form">
-            <label for="name">Tu nombre</label>
-            <input type="text" id="name" name="name" placeholder="Tu nombre" required>
-            <label for="email">Tu email</label>
-            <input type="email" id="email" name="email" placeholder="Tu email" required>
-            <label for="message">Tu mensaje</label>
-            <textarea id="message" name="message" placeholder="Tu mensaje" required></textarea>
-            <button type="submit" class="btn btn-info">ENVIAR</button>
-        </form>
+    <section id="manual-instalacion">
+        <h2>Manual de Instalación</h2>
+        <p>Descarga y sigue las instrucciones detalladas para instalar ACG correctamente.</p>
+        <button onclick="downloadInstallationManual()">Descargar Manual de Instalación</button>
     </section>
-</div>
-
-<!-- Footer -->
-<footer class="text-center mt-5">
-    <p>© 2024 AppaTec. Todos los derechos reservados.</p>
-</footer>
-
-<script src="js/script.js"></script>
+    <footer>
+        <p>© 2024 AppaTec. Todos los derechos reservados.</p>
+    </footer>
+</main>
 <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

@@ -1,128 +1,100 @@
-:root {
-    --background-image-light: url('../img/AppaTecFondoClaro1-1.png');
-    --background-image-dark: url('../img/AppaTecFondoOscuro1-3.png');
-    --logo-image-light: url('../img/AppaTecLogoClaro1-2.png');
-    --logo-image-dark: url('../img/AppaTecLogoOscuro1-4.png');
-    --footer-bg-light: #f8f9fa;
-    --footer-bg-dark: #343a40;
-    --text-color-light: #000;
-    --text-color-dark: #fff;
-    --button-primary-light: #007bff;
-    --button-primary-dark: #375a7f;
-    --button-success-light: #28a745;
-    --button-success-dark: #4caf50;
-    --button-info-light: #17a2b8;
-    --button-info-dark: #00c6d7;
+/* Bienvenida y descripción con sombra para mejorar contraste */
+.main-header h1, .main-header p {
+    color: white; /* Mantenemos el texto blanco */
+    text-shadow: 2px 2px 8px rgb(0, 198, 215); /* Sombra negra para resaltar el texto */
+    margin: 0;
+    padding: 0.5em 0;
+    font-size: 2.5em; /* Ajusta según necesidad */
 }
 
-body {
+/* Estilos básicos */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
     font-family: Arial, sans-serif;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    transition: background-image 0.5s, color 0.5s;
 }
 
-.navbar {
-    transition: background-color 0.5s, color 0.5s;
-}
-
-.hero-section {
-    height: 100vh;
+/* Encabezado principal */
+.main-header {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-}
-
-footer {
-    padding: 10px;
+    justify-content: center;
+    height: 100vh;
+    color: white;
     text-align: center;
-    transition: background-color 0.5s, color 0.5s;
+    background-size: cover;
+    background-position: center;
 }
 
-body[data-theme="light"] {
-    background-image: var(--background-image-light);
-    color: var(--text-color-light);
-}
-
-body[data-theme="dark"] {
-    background-image: var(--background-image-dark);
-    color: var(--text-color-dark);
-}
-
-body[data-theme="light"] .navbar {
+/* Navbar personalizada */
+.navbar {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    padding: 10px 20px;
     background-color: transparent;
-    color: var(--text-color-light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-body[data-theme="dark"] .navbar {
-    background-color: transparent;
-    color: var(--text-color-dark);
+.navbar-brand {
+    padding: 0;
+    margin: 0;
 }
 
-body[data-theme="light"] footer {
-    background-color: var(--footer-bg-light);
-    color: var(--text-color-light);
+.navbar-brand img {
+    height: 50px;
 }
 
-body[data-theme="dark"] footer {
-    background-color: var(--footer-bg-dark);
-    color: var(--text-color-dark);
+.navbar-nav {
+    flex-direction: row;
+    margin-right: 20px;
 }
 
-body[data-theme="light"] .btn-primary {
-    background-color: var(--button-primary-light);
-    border-color: var(--button-primary-light);
+.navbar-nav .nav-link {
+    color: white; /* Asegura contraste en ambos modos */
+    margin-left: 20px;
+    transition: color 0.3s ease; /* Suave transición para el efecto hover */
 }
 
-body[data-theme="dark"] .btn-primary {
-    background-color: var(--button-primary-dark);
-    border-color: var(--button-primary-dark);
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link:focus {
+    color: #00c6d7; /* Color de hover dorado */
+    text-decoration: none; /* Elimina el subrayado del enlace */
 }
 
-body[data-theme="light"] .btn-success {
-    background-color: var(--button-success-light);
-    border-color: var(--button-success-light);
+.navbar-toggler {
+    border-color: rgba(255,255,255,0.5);
 }
 
-body[data-theme="dark"] .btn-success {
-    background-color: var(--button-success-dark);
-    border-color: var(--button-success-dark);
+/* Modo Oscuro */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #333;
+        color: white;
+    }
+    .main-header {
+        background-image: url('img/AppaTecFondoOscuro1-3.png');
+    }
+    .navbar, .navbar-nav .nav-link {
+        color: white; /* Texto blanco en modo oscuro */
+        background-color: #222;
+    }
 }
 
-body[data-theme="light"] .btn-info {
-    background-color: var(--button-info-light);
-    border-color: var(--button-info-light);
-}
-
-body[data-theme="dark"] .btn-info {
-    background-color: var(--button-info-dark);
-    border-color: var(--button-info-dark);
-}
-
-#logo {
-    height: 40px;
-    transition: content 0.5s;
-}
-
-/* Background fading effect */
-body.faded {
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%), var(--background-image-light);
-}
-
-body[data-theme="dark"].faded {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), var(--background-image-dark);
-}
-
-/* Smooth transition for fading effect */
-body.smooth-transition {
-    transition: background-image 0.5s ease-in-out;
+/* Modo Claro */
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #fff;
+        color: black;
+    }
+    .main-header {
+        background-image: url('img/AppaTecFondoClaro1-1.png');
+    }
+    .navbar, .navbar-nav .nav-link {
+        color: black; /* Texto negro en modo claro */
+        background-color: #f8f9fa;
+    }
 }
