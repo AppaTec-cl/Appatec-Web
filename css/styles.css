@@ -1,175 +1,124 @@
-/* Bienvenida y descripción con sombra para mejorar contraste */
-.main-header h1, .main-header p {
-    color: rgb(255, 255, 255); /* Mantenemos el texto blanco */
-    text-shadow: 2px 2px 8px rgb(0, 198, 215); /* Sombra negra para resaltar el texto */
-    margin: 0;
-    padding: 0.5em 0;
-    font-size: 2.5em; /* Ajusta según necesidad */
+/* Estilos básicos y variables para ambos modos */
+:root {
+    --bg-color: #ffffff;  /* Fondo claro */
+    --text-color: #333;   /* Texto oscuro */
+    --section-bg-color: #f8f9fa;  /* Fondo de sección para modo claro */
 }
 
-/* Estilos básicos */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #333; /* Fondo para modo oscuro */
+        --text-color: #ccc; /* Texto para modo oscuro */
+        --section-bg-color: #2c2c2c;  /* Fondo de sección para modo oscuro */
+    }
+}
+
+/* Estilos básicos para cuerpo y HTML */
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
     font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
-/* Encabezado principal */
+/* Encabezado principal y bienvenida */
 .main-header {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    color: white;
     text-align: center;
     background-size: cover;
     background-position: center;
 }
 
+.main-header h1, .main-header p {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    margin: 0;
+    padding: 0.5em 0;
+    font-size: 2.5em;
+}
+
+/* Secciones de contenido */
+section {
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: var(--section-bg-color);
+    color: var(--text-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+section h2 {
+    font-size: 1.8em;
+    color: #00c6d7;
+    margin-bottom: 15px;
+}
+
+section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Botones estilizados */
+.button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+/* Footer centrado */
+footer {
+    width: 100%;
+    padding: 5px 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1em;
+}
 /* Navbar personalizada */
 .navbar {
     width: 100%;
     position: absolute;
     top: 0;
     padding: 10px 20px;
-    background-color: transparent;
+    background-color: transparent; /* Fondo transparente */
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.navbar-brand {
-    padding: 0;
-    margin: 0;
-}
-
 .navbar-brand img {
-    height: 50px;
-}
-
-.navbar-nav {
-    flex-direction: row;
-    margin-right: 20px;
+    height: 50px; /* Ajusta el tamaño de la imagen del logo */
 }
 
 .navbar-nav .nav-link {
-    color: white; /* Asegura contraste en ambos modos */
+    color: var(--text-color); /* Uso de la variable de color de texto */
     margin-left: 20px;
-    transition: color 0.3s ease; /* Suave transición para el efecto hover */
+    transition: color 0.3s ease; /* Transición suave al cambiar de color */
 }
 
 .navbar-nav .nav-link:hover, .navbar-nav .nav-link:focus {
-    color: #00c6d7; /* Color de hover dorado */
-    text-decoration: none; /* Elimina el subrayado del enlace */
-}
-
-.navbar-toggler {
-    border-color: rgba(255,255,255,0.5);
-}
-
-/* Modo Oscuro */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #333;
-        color: white;
-    }
-    .main-header {
-        background-image: url('img/AppaTecFondoOscuro1-3.png');
-    }
-    .navbar, .navbar-nav .nav-link {
-        color: white; /* Texto blanco en modo oscuro */
-        background-color: #222;
-    }
-}
-
-/* Modo Claro */
-@media (prefers-color-scheme: light) {
-    body {
-        background-color: #fff;
-        color: black;
-    }
-    .main-header {
-        background-image: url('img/AppaTecFondoClaro1-1.png');
-    }
-    .navbar, .navbar-nav .nav-link {
-        color: black; /* Texto negro en modo claro */
-        background-color: #f8f9fa;
-    }
-}
-
-/* Estilos para las secciones de contenido */
-section {
-    margin: 40px 20px;
-    padding: 20px;
-    background-color: #f8f9fa; /* Fondo claro para mejorar el contraste en modo oscuro */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra sutil para profundidad */
-    color: #333; /* Color de texto oscuro */
-}
-
-h2 {
-    font-size: 1.5em; /* Tamaño de fuente para títulos de sección */
-    color: #0056b3; /* Color azul para títulos */
-    margin-bottom: 20px; /* Espacio después del título */
-}
-
-p, .button {
-    font-size: 1em; /* Tamaño de fuente estándar para texto y botones */
-    line-height: 1.6; /* Espaciado de línea para mejor legibilidad */
-    color: #666; /* Color de texto más suave para el contenido */
-}
-
-.button {
-    padding: 10px 20px;
-    background-color: #0056b3; /* Fondo azul para botones */
-    color: white; /* Texto blanco para botones */
-    border: none;
-    border-radius: 5px; /* Bordes redondeados para botones */
-    cursor: pointer; /* Cursor en forma de mano al pasar el mouse */
-    transition: background-color 0.3s; /* Transición suave para el efecto hover */
-}
-
-.button:hover {
-    background-color: #004494; /* Color más oscuro en hover */
-}
-
-/* Ajustes específicos para modo oscuro */
-@media (prefers-color-scheme: dark) {
-    body, section {
-        background-color: #222; /* Fondo oscuro */
-        color: #ccc; /* Texto claro */
-    }
-
-    .button {
-        background-color: #007bff; /* Botones azules más claros para contraste */
-    }
-
-    .button:hover {
-        background-color: #0056b3; /* Azul más oscuro en hover */
-    }
-}
-footer {
-    width: 100%;             /* Asegura que el footer ocupe */
-    padding: 5px 0;         /* Agrega padding arriba y abajo para un poco de espacio */
-    background-color: #333;  /* Color de fondo para el footer */
-    color: #00c6d7;            /* Color del texto */
-    text-align: center;      /* Centra el texto horizontalmente */
-    display: flex;           /* Habilita flexbox para el contenedor */
-    justify-content: center; /* Alinea los elementos hijos horizontalmente en el centro */
-    align-items: center;     /* Alinea los elementos hijos verticalmente en el centro */
-    position: relative;      /* Posicionamiento relativo, cambia a 'absolute' si necesitas que esté al fondo */
-    bottom: 0;               /* Asegura que esté en la parte inferior de la página */
-    left: 0;                 /* Alinea al borde izquierdo de la página */
-    box-shadow: 0 -4px 6px rgba(0,0,0,0.1);  /* Sombra sutil para un efecto elevado */
-    font-size: 1em;          /* Tamaño de fuente apropiado para el texto del footer */
-}
-
-/* Ejemplo de cómo ajustar cuando está en modo oscuro */
-@media (prefers-color-scheme: dark) {
-    footer {
-        background-color: #222; /* Más oscuro para el modo oscuro */
-        color: #ffffff;           /* Texto más claro para el modo oscuro */
-    }
+    color: #00c6d7; /* Color brillante al hacer hover */
+    text-decoration: none; /* Elimina la subrayado al hacer hover */
 }
