@@ -122,3 +122,21 @@ footer {
     color: #00c6d7; /* Color brillante al hacer hover */
     text-decoration: none; /* Elimina la subrayado al hacer hover */
 }
+/* Estilos para los botones de descarga */
+.btn-descarga {
+    background-color: #00c6d7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-descarga:hover {
+    background-color: #0056b3;
+}
